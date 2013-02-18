@@ -1,0 +1,107 @@
+"---------------- CONFIG----------------
+" Clear screen on exit
+set t_te= t_ti=
+au VimLeave * :!clear
+
+" Visual Block Tab/Untab
+" gg=G Re-indents all the the document
+" <C-T> Indent (on insert mode)   >> (on visual mode)
+" <C-D> Unindent (on insert mode) << (on visual mode)
+:vnoremap > >gv
+:vnoremap < <gv
+" Alternative using Tab/Shift-Tab (for gvim).
+:vnoremap <Tab> >gv
+:vnoremap <S-Tab> <gv
+
+" Highlighting
+syntax on
+colorscheme delek
+
+" Status Line (now powerline) 
+set ls=2
+"set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+" show line number at left
+set number
+
+" change paste toogle (autoindent when pasting from other apps) => <F2>
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+
+" auto indent
+"set cindent
+"set smartindent
+"set autoindent
+"set expandtab
+"set tabstop=2
+"set shiftwidth=2
+"set cinkeys=0{,0},:,0#,!,!^F
+
+" ctags
+set tags=./tags;~/tags
+set mouse=a
+map <C-g> <C-]>
+"autocomplete from ctags
+"<C-n> 
+"<C-p>
+highlight Pmenu ctermfg=black ctermbg=white
+
+" cscope (not finished)
+filetype on
+
+" taglist
+nnoremap <silent> <F8> :TlistToggle<CR>
+
+" enable menus in console => <F4>
+  " solves duplicated entries in menu
+  set langmenu=none
+if !has("gui_running")
+    :source $VIMRUNTIME/menu.vim 
+    :set wildmenu                        
+    :set cpoptions-=<
+    :set wildcharm=<C-Z>
+    :map <F4> :emenu <C-Z>
+endif
+
+" Show differences with original file => <F9>
+function! DiffPreview()
+    diffthis | vsplit | enew | set buftype=nofile | read # | 1delete | diffthis
+endfunction
+map <F9> :call DiffPreview()<CR>
+
+"---------------- PLUGINS ----------------
+" Mini Buffer Explorer Plugin <F3> => Cycle between buffers <C-Tab> seems not to work.
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
+:map <F3> :call <SNR>11_CycleBuffer(1)<CR>:<BS>
+
+" EasyGrep (make a menu for it)
+" :Grep <text> 
+
+" -------------- JAVA ------------------
+autocmd Filetype java imap ( ()<left>
+function! My_BracketComplete()
+    let char = strpart(getline('.'), col('.')-1, 1)
+    if (char == ")")
+        return "\<Right>"
+    else
+        return ")"
+    endif
+endfunction
+autocmd FileType java inoremap ) <C-R>=My_BracketComplete()<CR>
+
+" ---------------- Vundle -------------------
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'minibufexpl.vim'
+
+filetype plugin indent on

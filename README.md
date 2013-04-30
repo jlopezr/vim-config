@@ -12,4 +12,6 @@ Installation
     :BundleUpdate
 
 Don't forget to add TERM environment variable to .bashrc
+
     export TERM=xterm-256color
+

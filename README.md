@@ -23,8 +23,8 @@ Seems that vim version in Ubuntu 12.04 is quite old for YCM. In this case, you c
     cd ~
     hg clone https://code.google.com/p/vim/
     cd vim
-    ./configure --with-features=hu  ge \
-                --enable-rubyint    erp \
+    ./configure --with-features=huge \
+                --enable-rubyinterp \
                 --enable-pythoninterp \
                 --enable-perlinterp \
                 --enable-gui=gtk2 --enable-cscope --prefix=/usr/local/stow/vim-7.4

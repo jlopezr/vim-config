@@ -29,14 +29,11 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-" auto indent
-"set cindent
-"set smartindent
-"set autoindent
-"set expandtab
-"set tabstop=2
-"set shiftwidth=2
-"set cinkeys=0{,0},:,0#,!,!^F
+" auto indent (http://tedlogan.com/techblog3.html)
+set smartindent
+set tabstop=4      " number of spaces per tab
+set shiftwidth=4   " number of spaces in automatic indentation and <<,>>
+"set expandtab     " tab writes spaces
 
 " ctags
 set tags=./tags;~/tags

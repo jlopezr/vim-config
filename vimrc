@@ -1,7 +1,7 @@
 "---------------- CONFIG----------------
 " Clear screen on exit
-set t_te= t_ti=
-au VimLeave * :!clear
+"set t_te= t_ti=
+"au VimLeave * :!clear
 
 " Visual Block Tab/Untab
 " gg=G Re-indents all the the document
@@ -70,29 +70,6 @@ function! DiffPreview()
 endfunction
 map <F9> :call DiffPreview()<CR>
 
-"---------------- PLUGINS ----------------
-" Mini Buffer Explorer Plugin <F3> => Cycle between buffers <C-Tab> seems not to work.
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
-:map <F3> :call <SNR>11_CycleBuffer(1)<CR>:<BS>
-
-" EasyGrep (make a menu for it)
-" :Grep <text> 
-
-" -------------- JAVA ------------------
-autocmd Filetype java imap ( ()<left>
-function! My_BracketComplete()
-    let char = strpart(getline('.'), col('.')-1, 1)
-    if (char == ")")
-        return "\<Right>"
-    else
-        return ")"
-    endif
-endfunction
-autocmd FileType java inoremap ) <C-R>=My_BracketComplete()<CR>
-
 " ---------------- Vundle -------------------
 set nocompatible
 filetype off
@@ -103,5 +80,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'minibufexpl.vim'
+Bundle 'Syntastic'
+Bundle 'SeeTab'
+" -- YMC --
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_confirm_extra_conf = 0
 
 filetype plugin indent on

@@ -33,7 +33,7 @@ set showmode
 set smartindent
 set tabstop=4      " number of spaces per tab
 set shiftwidth=4   " number of spaces in automatic indentation and <<,>>
-"set expandtab     " tab writes spaces
+set expandtab     " tab writes spaces
 
 " ctags
 set tags=./tags;~/tags
@@ -79,6 +79,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'minibufexpl.vim'
 Bundle 'Syntastic'
 Bundle 'SeeTab'
+Bundle 'EasyGrep'
+Bundle 'wting/rust.vim'
 " -- YMC --
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0

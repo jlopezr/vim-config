@@ -1,1 +1,1 @@
-/home/juan/.vim/ycm/c++
+./ycm/c++

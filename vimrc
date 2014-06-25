@@ -81,8 +81,11 @@ Bundle 'Syntastic'
 Bundle 'SeeTab'
 Bundle 'EasyGrep'
 Bundle 'wting/rust.vim'
+Bundle 'leafgarland/typescript-vim'
 " -- YMC --
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
+" -- OmniSharp --
+"Bundle 'nosami/Omnisharp'
 
 filetype plugin indent on

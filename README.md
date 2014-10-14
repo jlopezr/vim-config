@@ -17,6 +17,8 @@ Don't forget to add TERM environment variable to .bashrc
 
 YouCompleteMe (YCM)
 -------------------
+
+### Linux    
     
 Seems that vim version in Ubuntu 12.04 is quite old for YCM. In this case, you can compile vim 7.4 by hand or disable YCM.
 
@@ -40,5 +42,15 @@ Seems that vim version in Ubuntu 12.04 is quite old for YCM. In this case, you c
 In addition to this, is needed to compile YCM support.
 
     sudo apt-get install cmake
+    cd ~/.vim/bundle/YouCompleteMe
+    ./install.sh --clang-completer
+
+
+### MacOS X
+
+For MacOS X with MacPorts you can use the following code. It is important that you use the same python version that has been used for linking vim to compile YCM. This has been tested with Mavericks.
+
+    sudo port install vim +python27
+    sudo port select python python27
     cd ~/.vim/bundle/YouCompleteMe
     ./install.sh --clang-completer

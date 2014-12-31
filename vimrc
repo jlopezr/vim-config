@@ -87,5 +87,9 @@ Bundle 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
 " -- OmniSharp --
 "Bundle 'nosami/Omnisharp'
+" -- Markdown --
+Bundle 'godlygeek/tabular'
+Bundle 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
 
 filetype plugin indent on

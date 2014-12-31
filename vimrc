@@ -91,5 +91,7 @@ let g:ycm_confirm_extra_conf = 0
 Bundle 'godlygeek/tabular'
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
+Bundle 'suan/vim-instant-markdown'
+filetype plugin on
 
 filetype plugin indent on

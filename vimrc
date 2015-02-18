@@ -67,6 +67,11 @@ function! DiffPreview()
 endfunction
 map <F9> :call DiffPreview()<CR>
 
+" Crontab files are edited in place
+autocmd filetype crontab setlocal nobackup nowritebackup
+" Rsnapshot.conf MUST use tab not spaces
+autocmd BufRead,BufWrite rsnapshot.conf set noexpandtab 
+
 " ---------------- Vundle -------------------
 set nocompatible
 filetype off

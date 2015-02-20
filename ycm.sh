@@ -2,9 +2,9 @@
 function ycm_profile() {
    if [[ "$1" == "" ]]; then
         echo "Selected YCM profile:"
-        basename `readlink -f $HOME/.vim/ycm_extra_conf.py`	
+        basename `readlink $HOME/.vim/ycm_extra_conf.py`	
 	echo "Available YCM profiles are:"
-	dir $HOME/.vim/ycm
+	ls $HOME/.vim/ycm
    else
         if [[ -f "$HOME/.vim/ycm/$1" ]]; then
 	     rm ~/.vim/ycm_extra_conf.py

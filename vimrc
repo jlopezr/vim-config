@@ -97,6 +97,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 Bundle 'suan/vim-instant-markdown'
+Bundle 'editorconfig/editorconfig-vim'
 filetype plugin on
 
 filetype plugin indent on

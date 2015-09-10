@@ -1,5 +1,8 @@
 "---------------- CONFIG----------------
-" Clear screen on exit
+" Enable fish shell
+set shell=bash
+
+"" Clear screen on exit
 "set t_te= t_ti=
 "au VimLeave * :!clear
 
@@ -98,6 +101,13 @@ Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 Bundle 'suan/vim-instant-markdown'
 Bundle 'editorconfig/editorconfig-vim'
+" -- Rust Autocomplete
+Bundle 'phildawes/racer'
+set hidden
+let g:racer_cmd = "/usr/local/bin/racer"
+let $RUST_SRC_PATH="/usr/local/src/rust/src/"
+" -- Go lang
+Bundle 'fatih/vim-go'
+" --
 filetype plugin on
-
 filetype plugin indent on

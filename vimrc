@@ -108,6 +108,8 @@ let g:racer_cmd = "/usr/local/bin/racer"
 let $RUST_SRC_PATH="/usr/local/src/rust/src/"
 " -- Go lang
 Bundle 'fatih/vim-go'
+" -- TagBar --
+Bundle 'majutsushi/tagbar' 
 " --
 filetype plugin on
 filetype plugin indent on

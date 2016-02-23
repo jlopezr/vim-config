@@ -109,7 +109,9 @@ let $RUST_SRC_PATH="/usr/local/src/rust/src/"
 " -- Go lang
 Bundle 'fatih/vim-go'
 " -- TagBar --
-Bundle 'majutsushi/tagbar' 
+Bundle 'majutsushi/tagbar'
+" -- Fish Syntax Highlighting --
+Bundle 'dag/vim-fish'
 " --
 filetype plugin on
 filetype plugin indent on

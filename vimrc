@@ -86,6 +86,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'minibufexpl.vim'
 Bundle 'Syntastic'
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
 Bundle 'SeeTab'
 Bundle 'EasyGrep'
 Bundle 'wting/rust.vim'

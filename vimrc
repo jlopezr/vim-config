@@ -20,7 +20,7 @@ set shell=bash
 syntax on
 colorscheme delek
 
-" Status Line (now powerline) 
+" Status Line (now powerline)
 set ls=2
 "set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
@@ -43,7 +43,7 @@ set tags=./tags;~/tags
 set mouse=a
 map <C-g> <C-]>
 "autocomplete from ctags
-"<C-n> 
+"<C-n>
 "<C-p>
 highlight Pmenu ctermfg=black ctermbg=white
 
@@ -57,8 +57,8 @@ nnoremap <silent> <F8> :TlistToggle<CR>
   " solves duplicated entries in menu
   set langmenu=none
 if !has("gui_running")
-    :source $VIMRUNTIME/menu.vim 
-    :set wildmenu                        
+    :source $VIMRUNTIME/menu.vim
+    :set wildmenu
     :set cpoptions-=<
     :set wildcharm=<C-Z>
     :map <F4> :emenu <C-Z>
@@ -73,7 +73,11 @@ map <F9> :call DiffPreview()<CR>
 " Crontab files are edited in place
 autocmd filetype crontab setlocal nobackup nowritebackup
 " Rsnapshot.conf MUST use tab not spaces
-autocmd BufRead,BufWrite rsnapshot.conf set noexpandtab 
+autocmd BufRead,BufWrite rsnapshot.conf set noexpandtab
+
+" Show tabs & spaces
+set list          " Display unprintable characters f12 - switches
+set listchars=tab:•\ ,trail:•,extends:»,precedes:« " Unprintable chars mapping
 
 " ---------------- Vundle -------------------
 set nocompatible
@@ -83,8 +87,11 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'minibufexpl.vim'
+Bundle 'vim-airline/vim-airline'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+" minufbufexpl not needed after tabline in airline
+"Bundle 'minibufexpl.vim'
 Bundle 'Syntastic'
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_always_populate_loc_list = 1

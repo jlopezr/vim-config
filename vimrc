@@ -134,6 +134,7 @@ Bundle 'leafgarland/typescript-vim'
 " -- YMC --
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_server_python_interpreter = '/opt/local/bin/python3'
 " -- OmniSharp --
 "Bundle 'nosami/Omnisharp'
 " -- Markdown --
